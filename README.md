@@ -1,15 +1,15 @@
 
-# Title
-by Name
+# README Generator
+by Cory
 
 ## Description
-Description
+Generates a README.md
 
 ## Installation
-Install instructions
+N/A
 
 ## Usage
-examples
+Use node (filename).js for this example (node index.js) in gitbash terminal
 
 ## Contributing
 Pull requests are welcome. For changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
