@@ -1,6 +1,8 @@
 // Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
+import generateMarkdown from "./utils/generateMarkdown.js";
+
 // An array of questions for user input
 const questions = [
     {
@@ -49,7 +51,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'What license does your project have?',
-        choices: ['MIT', 'Apache 2.0', 'GPL 3.0', "BSL-1.0", "MPL2.0", "BSD-2-Clause", "BSD-3-Clause", 'None'],
+        choices: ['MIT', 'Apache-2.0', 'GPL-3.0', "BSL-1.0", "MPL-2.0", "BSD-2-Clause", "BSD-3-Clause", 'None'],
     },
     {
         type: 'input',
@@ -69,37 +71,6 @@ const questions = [
             err ? console.log(err) : console.log('Successfully created README.md!');
     });
 };
-
-// Function to generate markdown content from user input
-function generateMarkdown(readmeContent) {
-    return `
-# ${readmeContent.title}
-by ${readmeContent.name}
-
-## Description
-${readmeContent.description}
-
-## Installation
-${readmeContent.installation}
-
-## Usage
-${readmeContent.usage}
-
-## Contributing
-${readmeContent.contributing}
-
-## Tests
-${readmeContent.tests}
-
-## License
-${readmeContent.license}
-
-## Questions
-If you have any questions, please reach out to me on GitHub: [${readmeContent.github}](https://github.com/${readmeContent.github}) or via email: ${readmeContent.email}.
-Also have a video guide - https://drive.google.com/file/d/1aYY4kgUUEF542BzA-VetdCVGyNQAyqrc/view or readme generator.mp4
-
-    `;
-}
 
 // A function to initialize app
 function init() {
